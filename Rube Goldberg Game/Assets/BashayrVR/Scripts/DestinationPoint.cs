@@ -46,15 +46,11 @@ public class DestinationPoint : MonoBehaviour {
                 
             }else if (currentScene.name == "Scene02")
             {
-                for (int i = 0; i < collectStars.Length; i++)
+                foreach (var c in collectStars)
                 {
-                    if (!collectStars[i].gameObject.activeSelf)
+                    if (!c.gameObject.activeInHierarchy)
                     {
                         isAllUnactive = true;
-                    }
-                    else
-                    {
-                        isAllUnactive = false;
                     }
 
                 }
@@ -69,15 +65,11 @@ public class DestinationPoint : MonoBehaviour {
             }
             else if (currentScene.name == "Scene03")
             {
-                for (int i = 0; i < collectStars.Length; i++)
+                foreach (var c in collectStars)
                 {
-                    if (!collectStars[i].gameObject.activeSelf)
+                    if (!c.gameObject.activeInHierarchy)
                     {
                         isAllUnactive = true;
-                    }
-                    else
-                    {
-                        isAllUnactive = false;
                     }
 
                 }
@@ -92,15 +84,11 @@ public class DestinationPoint : MonoBehaviour {
             }
             else
             {
-                for (int i = 0; i < collectStars.Length; i++)
+                foreach (var c in collectStars)
                 {
-                    if (!collectStars[i].gameObject.activeSelf)
+                    if (!c.gameObject.activeInHierarchy)
                     {
                         isAllUnactive = true;
-                    }
-                    else
-                    {
-                        isAllUnactive = false;
                     }
 
                 }

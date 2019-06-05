@@ -10,6 +10,7 @@ public class ControllerInputManage : MonoBehaviour {
     public static bool isThrow;
 
 
+
     // Teleporter
     private LineRenderer laser;
     public GameObject teleportAimerObject;
@@ -120,6 +121,7 @@ public class ControllerInputManage : MonoBehaviour {
             }
         }else
         {
+            //not used!
             if (isDashing)
             {
                 lerpTime += Time.deltaTime * dashSpeed;
@@ -140,9 +142,10 @@ public class ControllerInputManage : MonoBehaviour {
 
                     setLaserStart(gameObject.transform.position);
                     RaycastHit hit;
-                    if (Physics.Raycast(transform.position, transform.forward, out hit, 15, laserMask))
+                    if (Physics.Raycast(transform.position, transform.forward, out hit, 25f, laserMask) )
                     {
                         teleportLocation = hit.point;
+
                     }
                     else
                     {
@@ -162,10 +165,12 @@ public class ControllerInputManage : MonoBehaviour {
                 {
                     laser.gameObject.SetActive(false);
                     teleportAimerObject.SetActive(false);
-                    //player.transform.position = teleportLocation;
-                    dashStartPosition = player.transform.position;
-                    isDashing = true;
+                    player.transform.position = teleportLocation;
+                    //dashStartPosition = player.transform.position;
+                    //isDashing = true;
                 }
+
+
             }
             if (device.GetPress(SteamVR_Controller.ButtonMask.Grip))
             {

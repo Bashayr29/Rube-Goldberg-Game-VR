@@ -12,6 +12,8 @@ TagManager:
   - Ground
   - Start
   - Target
+  - StartPlatform
+  - FactoryBuilding
   layers:
   - Default
   - TransparentFX

@@ -21,7 +21,7 @@ public class BallReset : MonoBehaviour {
     }
      void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground") && !collision.gameObject.CompareTag("Target"))
+        if (collision.gameObject.CompareTag("Ground") && !collision.gameObject.CompareTag("Target") && !collision.gameObject.CompareTag("StartPlatform"))
         {
             
             Rigidbody rigidBody = GetComponent<Rigidbody>();
